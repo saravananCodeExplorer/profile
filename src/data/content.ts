@@ -13,6 +13,7 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/saravanansekar2003/",
   github: "https://github.com/saravananCodeExplorer",
   portfolio: "https://bug2build.redwindow.tech/",
+  youtube: "https://www.youtube.com/channel/UCTb_zMC6s3h6fVp-q1YJ7Ag",
   about: [
     "I'm a Software Developer with a passion for building innovative web applications and empowering future developers. I specialize in React, JavaScript, and modern web technologies, delivering scalable and user-focused solutions for clients and businesses.",
     "With experience in both development and training, I bridge the gap between technical expertise and practical learning. Whether developing custom web solutions or mentoring students and professionals, I am committed to delivering quality, fostering growth, and staying at the forefront of technology.",

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Code2, ShieldCheck, Sparkles } from "lucide-react";
+import { Code2, PlayCircle, ShieldCheck, Sparkles } from "lucide-react";
 import { personal, profileImage } from "@/data/content";
 import GlassCard from "@/components/ui/GlassCard";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -82,6 +82,30 @@ export default function About() {
                 </motion.div>
               ))}
             </div>
+
+            <motion.a
+              href={personal.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor-hover
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="glass group mt-4 flex items-center gap-4 rounded-2xl p-4 transition-colors duration-300 hover:border-neon-blue/50"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-purple text-black">
+                <PlayCircle size={20} />
+              </span>
+              <span>
+                <span className="block text-xs uppercase tracking-widest text-muted">
+                  YouTube
+                </span>
+                <span className="block text-sm font-medium text-foreground group-hover:text-neon-cyan">
+                  Learn ReactJS for Beginners — Full Course
+                </span>
+              </span>
+            </motion.a>
           </motion.div>
         </GlassCard>
       </div>

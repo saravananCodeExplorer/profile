@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, Globe, Send, CheckCircle2 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { GithubIcon, LinkedinIcon, YoutubeIcon } from "@/components/icons/BrandIcons";
 import { personal } from "@/data/content";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
@@ -14,6 +14,7 @@ const contactInfo = [
   { icon: Phone, label: "Phone", value: personal.phone, href: `tel:${personal.phone.replace(/\s/g, "")}` },
   { icon: LinkedinIcon, label: "LinkedIn", value: "saravanansekar2003", href: personal.linkedin },
   { icon: GithubIcon, label: "GitHub", value: "saravananCodeExplorer", href: personal.github },
+  { icon: YoutubeIcon, label: "YouTube", value: "Learn ReactJS Tutorials", href: personal.youtube },
   { icon: Globe, label: "Portfolio", value: "Bug 2 Build", href: personal.portfolio },
 ];
 

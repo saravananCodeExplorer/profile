@@ -1,13 +1,14 @@
 "use client";
 
 import { Mail, Globe, ArrowUp } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { GithubIcon, LinkedinIcon, YoutubeIcon } from "@/components/icons/BrandIcons";
 import { personal } from "@/data/content";
 import { useScrollTo } from "@/hooks/useScrollTo";
 
 const socials = [
   { icon: GithubIcon, href: personal.github, label: "GitHub" },
   { icon: LinkedinIcon, href: personal.linkedin, label: "LinkedIn" },
+  { icon: YoutubeIcon, href: personal.youtube, label: "YouTube" },
   { icon: Mail, href: `mailto:${personal.email}`, label: "Email" },
   { icon: Globe, href: personal.portfolio, label: "Portfolio" },
 ];
