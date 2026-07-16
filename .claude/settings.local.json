@@ -2,7 +2,33 @@
   "permissions": {
     "allow": [
       "Bash(npm -v)",
-      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)"
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/three/package.json'\\).version\\); console.log\\(require\\('./node_modules/@react-three/fiber/package.json'\\).version\\); console.log\\(require\\('./node_modules/@react-three/drei/package.json'\\).version\\)\")",
+      "Bash(npm run *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/lucide-react/package.json'\\).version\\)\")",
+      "Bash(node -e \"const m = require\\('./node_modules/lucide-react/dist/cjs/lucide-react.js'\\); console.log\\(Object.keys\\(m\\).filter\\(k => /github|linkedin/i.test\\(k\\)\\)\\)\")",
+      "Bash(node -e ' *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ --max-time 8)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/ --max-time 8)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl -s http://localhost:3000/ --max-time 10 -o /tmp/portfolio.html)",
+      "Bash(curl -s -o /dev/null http://localhost:3000/ --max-time 5)",
+      "Bash(mv \"WhatsApp Image 2026-07-16 at 10.22.52 AM.jpeg\" \"working-at-laptop.jpg\")",
+      "Bash(mv \"WhatsApp Image 2026-07-16 at 10.22.53 AM \\(1\\).jpeg\" \"poster-periyar-guest-lecture.jpg\")",
+      "Bash(mv \"WhatsApp Image 2026-07-16 at 10.22.53 AM \\(2\\).jpeg\" \"training-vallam-1.jpg\")",
+      "Bash(mv \"WhatsApp Image 2026-07-16 at 10.22.53 AM.jpeg\" \"training-vallam-2.jpg\")",
+      "Bash(mv \"WhatsApp Image 2026-07-16 at 10.22.54 AM \\(1\\).jpeg\" \"training-vallam-3.jpg\")",
+      "Bash(cd \"c:\\\\Users\\\\HINATA\\\\Music\\\\profile\\\\public\\\\assets\" && mv \"WhatsApp Image 2026-07-16 at 10.22.56 AM.jpeg\" \"training-tholurpatti-2.jpg\" && ls)",
+      "Bash(curl -s http://localhost:3000/ --max-time 10 -o /tmp/portfolio2.html)",
+      "Bash(curl -s -o /dev/null -w \"profile-photo.jpg: %{http_code}\\\\n\" \"http://localhost:3000/assets/profile-photo.jpg\" --max-time 10)",
+      "Bash(curl -s -o /dev/null -w \"poster-kongunadu-vacad.jpg: %{http_code}\\\\n\" \"http://localhost:3000/assets/poster-kongunadu-vacad.jpg\" --max-time 10)",
+      "Bash(curl -s -o /dev/null -w \"training-tholurpatti-2.jpg: %{http_code}\\\\n\" \"http://localhost:3000/assets/training-tholurpatti-2.jpg\" --max-time 10)",
+      "Bash(curl -s -o /dev/null -w \"About photo: %{http_code}\\\\n\" \"http://localhost:3000/about/Saravanan.jpeg\" --max-time 10)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\HINATA\\Music\\profile\\public\\assets"
     ]
   }
 }
