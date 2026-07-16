@@ -1,10 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Calendar } from "lucide-react";
 import { experience } from "@/data/content";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
+
+function getInitials(name: string) {
+  const initials = name
+    .split(" ")
+    .filter(Boolean)
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+  return initials || null;
+}
 
 export default function Experience() {
   return (
@@ -12,77 +23,81 @@ export default function Experience() {
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading eyebrow="Where I've worked" title="Experience" />
 
-        <div className="relative mt-16">
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            style={{ transformOrigin: "top" }}
-            className="absolute left-[19px] top-2 h-full w-[2px] bg-gradient-to-b from-neon-cyan via-neon-blue to-neon-purple sm:left-1/2 sm:-translate-x-1/2"
-          />
+        <div className="mt-16 flex flex-col gap-8">
+          {experience.map((item, i) => {
+            const initials = getInitials(item.company);
 
-          <div className="flex flex-col gap-16">
-            {experience.map((item, i) => (
-              <div
-                key={item.company}
-                className="relative flex flex-col gap-6 sm:flex-row sm:items-start"
+            return (
+              <motion.div
+                key={`${item.role}-${item.duration}`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ y: -6 }}
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="animate-pulse-glow relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-purple sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+                <GlassCard
+                  strong
+                  className="relative overflow-hidden p-8 sm:p-10"
                 >
-                  <Briefcase size={16} className="text-black" />
-                </motion.div>
+                  <span
+                    aria-hidden
+                    className="font-heading pointer-events-none absolute -right-4 -top-6 select-none text-[7rem] font-extrabold leading-none text-white/5 sm:text-[9rem]"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.7, delay: 0.15 }}
-                  className={`sm:w-1/2 ${
-                    i % 2 === 0
-                      ? "sm:pr-10 sm:ml-0"
-                      : "sm:pl-10 sm:ml-auto sm:text-right"
-                  } pl-14 sm:pl-0`}
-                >
-                  <GlassCard className="p-6">
-                    <p className="font-mono-code text-xs uppercase tracking-widest text-neon-cyan">
-                      {item.duration}
-                    </p>
-                    <h3 className="font-heading mt-2 text-xl font-bold">
-                      {item.role}
-                    </h3>
-                    <p className="text-muted">{item.company}</p>
+                  <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex items-start gap-5">
+                      <div className="glow-blue flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-purple">
+                        {initials ? (
+                          <span className="font-heading text-xl font-bold text-black">
+                            {initials}
+                          </span>
+                        ) : (
+                          <Briefcase size={26} className="text-black" />
+                        )}
+                      </div>
 
-                    <ul className="mt-4 space-y-2 text-sm text-muted">
-                      {item.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-
-                    <div
-                      className={`mt-5 flex flex-wrap gap-2 ${
-                        i % 2 !== 0 ? "sm:justify-end" : ""
-                      }`}
-                    >
-                      {item.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-full border border-neon-blue/30 bg-neon-blue/5 px-3 py-1 text-xs text-neon-cyan"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      <div>
+                        <h3 className="font-heading text-xl font-bold sm:text-2xl">
+                          {item.role}
+                        </h3>
+                        {item.company && (
+                          <p className="mt-1 text-muted">{item.company}</p>
+                        )}
+                      </div>
                     </div>
-                  </GlassCard>
-                </motion.div>
-              </div>
-            ))}
-          </div>
+
+                    <span className="font-mono-code inline-flex w-fit shrink-0 items-center gap-2 rounded-full border border-neon-blue/30 bg-neon-blue/5 px-4 py-1.5 text-xs uppercase tracking-widest text-neon-cyan">
+                      <Calendar size={13} />
+                      {item.duration}
+                    </span>
+                  </div>
+
+                  <ul className="relative mt-6 space-y-2.5 text-sm leading-relaxed text-muted">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="relative mt-6 flex flex-wrap gap-2">
+                    {item.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-neon-blue/30 bg-neon-blue/5 px-3 py-1 text-xs text-neon-cyan"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </GlassCard>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

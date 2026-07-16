@@ -39,7 +39,7 @@ export default function TrainingGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
-              className={`group glass relative overflow-hidden rounded-2xl ${spanClasses[i] ?? ""}`}
+              className={`group glass relative overflow-hidden rounded-2xl ${spanClasses[i % spanClasses.length]}`}
             >
               <Image
                 src={photo.src}

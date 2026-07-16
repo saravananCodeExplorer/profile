@@ -8,7 +8,7 @@ export const personal = {
     "Frontend Engineer",
     "Software Trainer",
   ],
-  email: "saravanan.sekar@example.com",
+  email: "saravanansekar434@example.com",
   phone: "+91 6380190949",
   linkedin: "https://www.linkedin.com/in/saravanansekar2003/",
   github: "https://github.com/saravananCodeExplorer",
@@ -69,6 +69,46 @@ export const trainingPhotos: TrainingPhoto[] = [
     caption: "Web development training session",
     location: "Periyar Maniammai University Knowledge Centre, Vallam",
   },
+  {
+    src: "/assets/training-vallam-2.jpg",
+    caption: "Session on frontend & backend architecture layers",
+    location: "Periyar Maniammai University Knowledge Centre, Vallam",
+  },
+  {
+    src: "/assets/training-vallam-3.jpg",
+    caption: "Web development fundamentals session",
+    location: "Periyar Maniammai University Knowledge Centre, Vallam",
+  },
+  {
+    src: "/assets/training-thoothukudi-3.jpg",
+    caption: "Programming fundamentals training",
+    location: "Thoothukudi",
+  },
+  {
+    src: "/assets/training-tholurpatti.jpg",
+    caption: "Hands-on coding session",
+    location: "Tholurpatti",
+  },
+  {
+    src: "/assets/training-git-workshop-1.jpg",
+    caption: "Git & version control workshop",
+    location: "Classroom Training",
+  },
+  {
+    src: "/assets/training-git-workshop-2.jpg",
+    caption: "Git & version control workshop",
+    location: "Classroom Training",
+  },
+  {
+    src: "/assets/training-large-hall.jpg",
+    caption: "Full-house training session",
+    location: "Classroom Training",
+  },
+  {
+    src: "/assets/working-at-laptop.jpg",
+    caption: "Building and preparing session material",
+    location: "Foxdare Technologies",
+  }
 ];
 
 export const heroTechOrbit = [
@@ -138,7 +178,7 @@ export type Project = {
   title: string;
   description: string;
   tags: string[];
-  preview: "iam" | "ecommerce" | "testplatform";
+  preview: "iam" | "ecommerce" | "testplatform" | "erp" | "windmill" | "ship";
   gradient: string;
 };
 
@@ -195,6 +235,59 @@ export const projects: Project[] = [
     ],
     preview: "testplatform",
     gradient: "from-neon-blue via-neon-purple to-neon-cyan",
+  },
+  {
+    id: "erp-lead-management",
+    title: "ERP Lead Management Module",
+    description:
+      "A responsive ERP Lead Management Module that enables users to manage customer leads efficiently through a clean and reusable React component architecture, integrating with REST APIs using Axios.",
+    tags: [
+      "React.js",
+      "React Router",
+      "Axios",
+      "JSON Server",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Git",
+      "GitHub",
+    ],
+    preview: "erp",
+    gradient: "from-neon-cyan via-neon-purple to-neon-blue",
+  },
+  {
+    id: "windmill-data-management",
+    title: "Windmill Data Management System",
+    description:
+      "A web-based system to manage and monitor windmill operational data through a centralized platform, tracking wind speed, energy output, turbine status, and maintenance records with interactive dashboards and report generation.",
+    tags: [
+      "PHP",
+      "MySQL",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "XAMPP/Apache",
+    ],
+    preview: "windmill",
+    gradient: "from-neon-blue via-neon-cyan to-neon-purple",
+  },
+  {
+    id: "ship-environmental-management",
+    title: "Ship Environmental Management System",
+    description:
+      "A web-based environmental monitoring system for ship operations, featuring user authentication, real-time sensor monitoring, environmental compliance, waste management, crew training, emergency preparedness, and interactive dashboards with Chart.js reporting.",
+    tags: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "PHP",
+      "MySQL",
+      "Chart.js",
+      "XAMPP",
+    ],
+    preview: "ship",
+    gradient: "from-neon-purple via-neon-cyan to-neon-blue",
   },
 ];
 

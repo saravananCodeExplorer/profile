@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { GithubIcon } from "@/components/icons/BrandIcons";
 import { projects } from "@/data/content";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TiltCard from "@/components/ui/TiltCard";
@@ -56,13 +54,13 @@ export default function Projects() {
                       data-cursor-hover
                       className="flex items-center gap-1.5 text-sm font-semibold text-white transition-colors hover:text-neon-cyan"
                     >
-                      <ExternalLink size={15} /> Live Preview
+                      
                     </button>
                     <button
                       data-cursor-hover
                       className="flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-neon-cyan"
                     >
-                      <GithubIcon size={15} /> Source
+                     
                     </button>
                   </div>
                 </div>
