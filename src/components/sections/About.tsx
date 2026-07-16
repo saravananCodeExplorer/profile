@@ -2,7 +2,16 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Code2, PlayCircle, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  Code2,
+  MapPin,
+  PlayCircle,
+  Rocket,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Briefcase,
+} from "lucide-react";
 import { personal, profileImage } from "@/data/content";
 import GlassCard from "@/components/ui/GlassCard";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -59,6 +68,17 @@ export default function About() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
           >
+            <div className="mb-5 flex flex-wrap gap-4 text-sm text-muted">
+              <span className="flex items-center gap-1.5">
+                <MapPin size={15} className="text-neon-cyan" />
+                {personal.location}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Briefcase size={15} className="text-neon-cyan" />
+                {personal.experienceYears} Experience
+              </span>
+            </div>
+
             <div className="flex flex-col gap-4">
               {personal.about.map((paragraph) => (
                 <p key={paragraph} className="text-lg leading-relaxed text-muted">
@@ -108,6 +128,67 @@ export default function About() {
             </motion.a>
           </motion.div>
         </GlassCard>
+
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            <GlassCard className="h-full p-7">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-neon-cyan to-neon-blue text-black">
+                  <Target size={18} />
+                </span>
+                <h3 className="font-heading text-lg font-bold">
+                  Short-Term Goal
+                </h3>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                {personal.goals.shortTerm}
+              </p>
+            </GlassCard>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <GlassCard className="h-full p-7">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-neon-purple to-neon-blue text-black">
+                  <Rocket size={18} />
+                </span>
+                <h3 className="font-heading text-lg font-bold">
+                  Long-Term Goal
+                </h3>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                {personal.goals.longTerm}
+              </p>
+            </GlassCard>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-6 flex flex-wrap justify-center gap-3"
+        >
+          {personal.strengths.map((strength) => (
+            <span
+              key={strength}
+              className="rounded-full border border-neon-blue/30 bg-neon-blue/5 px-4 py-2 text-xs font-medium text-neon-cyan"
+            >
+              {strength}
+            </span>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

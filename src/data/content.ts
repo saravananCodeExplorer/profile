@@ -14,9 +14,24 @@ export const personal = {
   github: "https://github.com/saravananCodeExplorer",
   portfolio: "https://bug2build.redwindow.tech/",
   youtube: "https://www.youtube.com/channel/UCTb_zMC6s3h6fVp-q1YJ7Ag",
+  location: "Thanjavur, Tamil Nadu",
+  experienceYears: "2+ Years",
   about: [
     "I'm a Software Developer with a passion for building innovative web applications and empowering future developers. I specialize in React, JavaScript, and modern web technologies, delivering scalable and user-focused solutions for clients and businesses.",
     "With experience in both development and training, I bridge the gap between technical expertise and practical learning. Whether developing custom web solutions or mentoring students and professionals, I am committed to delivering quality, fostering growth, and staying at the forefront of technology.",
+  ],
+  goals: {
+    shortTerm:
+      "To work as a Web Developer in a reputed organization where I can apply my technical skills, learn new technologies, and gain more practical experience.",
+    longTerm:
+      "To become a skilled software professional, take on more responsibilities, and contribute to impactful projects that support the growth of the organization.",
+  },
+  strengths: [
+    "Quick Learner",
+    "Self-Motivated",
+    "Problem Solver",
+    "Effective Communicator",
+    "Adapts Quickly to New Technologies",
   ],
 };
 
