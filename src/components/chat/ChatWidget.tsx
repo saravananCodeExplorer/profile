@@ -97,7 +97,7 @@ export default function ChatWidget() {
                 <Bot size={18} />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="font-heading text-sm font-bold">Saravanan&apos;s Assistant</p>
+                <p className="font-heading text-sm font-bold">My Assistant</p>
                 <p className="flex items-center gap-1.5 text-xs text-muted">
                   <span className="h-1.5 w-1.5 animate-pulse-glow rounded-full bg-neon-cyan" />
                   Online

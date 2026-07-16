@@ -26,7 +26,7 @@ const rules: Rule[] = [
   {
     keywords: ["hello", "hi", "hey", "greetings", "yo"],
     reply: () => ({
-      text: `Hey! 👋 I'm ${personal.name}'s assistant. Ask me about his skills, projects, experience, training, or how to get in touch.`,
+      text: `Hey!  I'm My Boss assistant. Ask me about his skills, projects, experience, training, or how to get in touch.`,
     }),
   },
   {
@@ -199,4 +199,4 @@ export const quickReplies: { label: string; message: string }[] = [
   { label: "Contact", message: "How can I contact you?" },
 ];
 
-export const greeting = `Hi, I'm ${personal.name}'s assistant 👋 Ask me anything about his skills, projects, experience, or training — or tap a quick option below.`;
+export const greeting = `Hi, I'm  My Boss assistant 👋 Ask me anything about his skills, projects, experience, or training — or tap a quick option below.`;
