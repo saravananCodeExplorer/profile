@@ -8,6 +8,7 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import Loader from "@/components/ui/Loader";
 import SmoothScroll from "@/components/providers/SmoothScroll";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -88,6 +89,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ChatWidget />
         </SmoothScroll>
       </body>
     </html>
