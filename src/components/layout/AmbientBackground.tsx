@@ -1,3 +1,11 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+const AmbientShapes = dynamic(() => import("@/components/three/AmbientShapes"), {
+  ssr: false,
+});
+
 export default function AmbientBackground() {
   return (
     <div
@@ -15,6 +23,10 @@ export default function AmbientBackground() {
         className="animate-blob absolute bottom-[-15%] left-[20%] h-[30rem] w-[30rem] rounded-full bg-neon-cyan/15 blur-[130px]"
         style={{ animationDelay: "-9s" }}
       />
+
+      <div className="absolute inset-0 hidden sm:block">
+        <AmbientShapes />
+      </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
     </div>
