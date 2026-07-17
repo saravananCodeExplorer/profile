@@ -31,7 +31,7 @@ export default function TrainingGallery() {
           Nadu.
         </p>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:auto-rows-[220px] sm:grid-cols-4">
+        <div className="mt-14 grid grid-cols-2 auto-rows-[150px] gap-4 sm:auto-rows-[220px] sm:grid-cols-4">
           {trainingPhotos.map((photo, i) => (
             <motion.div
               key={photo.src}
