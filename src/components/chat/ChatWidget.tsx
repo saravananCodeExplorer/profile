@@ -92,6 +92,7 @@ export default function ChatWidget() {
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="glass-strong fixed bottom-24 right-4 z-50 flex h-[75vh] max-h-[520px] w-[92vw] max-w-[360px] flex-col overflow-hidden rounded-3xl shadow-2xl sm:right-6"
           >
+            
             <div className="flex items-center gap-3 border-b border-white/10 bg-gradient-to-r from-neon-cyan/15 via-neon-blue/15 to-neon-purple/15 p-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-neon-cyan via-neon-blue to-neon-purple text-black">
                 <Bot size={18} />
